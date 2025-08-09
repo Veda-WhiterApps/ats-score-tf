@@ -1,0 +1,16 @@
+Input
+Type: Raw resume text (string)
+
+Format: Plain text (extracted from PDF/DOCX before feeding into model)
+
+Processing: Must be tokenized using tokenizer.pkl and padded to length 500 before feeding into the model
+
+Output
+Type: Probability array (list of floats)
+
+Meaning: Each value represents the likelihood that the resume fits a specific job category (labels are in label_encoder.pkl)
+
+ATS Score: Can be taken as max(probabilities) × 100%
+
+Category Prediction: The index of the highest probability, converted to label using label_encoder.pkl
+
